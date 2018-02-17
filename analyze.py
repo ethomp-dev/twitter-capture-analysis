@@ -1,8 +1,8 @@
 import errno
 import time
 
-KEYWORD = "Design"   # KEYWORD = input("Enter the search string for analysis (in double quotes): ")
-num = 5              # num = int(input("Enter the number of records to display: "))
+KEYWORD = input("Enter the search string for analysis (in double quotes): ")
+num = int(input("Enter the number of records to display: "))
 
 try:
     capture = open('./captures/' + KEYWORD + '.txt', 'r')

@@ -6,12 +6,12 @@ ACCESS_SECRET = 'fk4Uxwd3LQRktrLEmYaPMsVJS6rpZBJRPH7taffRXCYC9'
 CONSUMER_KEY = 'Vs8tY1cxCc5ZLcSZ8pie1LV9Q'
 CONSUMER_SECRET = 'Z6iFi9xu71cV1uNkuNhtVzgk0VSyd2CevajwKk0lPOqmeWmc2d'
 
-SEARCH = 'Election' # SEARCH = input("Enter the search string (in double quotes): ")
-# FROM = input("Enter the from date (YYYY-MM-DD format): ")
-# TO = input("Enter the to date (YYYY-MM-DD format): ")
+SEARCH = input("Enter the search string (in double quotes): ")
+FROM = input("Enter the from date (YYYY-MM-DD format): ")
+TO = input("Enter the to date (YYYY-MM-DD format): ")
 INPUT_FILE_PATH = './captures/' + SEARCH + '.txt'
 
-num = 100 # num = int(input("Enter the number of tweets you want to retrieve: "))
+num = int(input("Enter the number of tweets you want to retrieve: "))
 auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
 auth.set_access_token(ACCESS_TOKEN, ACCESS_SECRET)
 api = tweepy.API(auth)
@@ -36,5 +36,7 @@ for res in tweepy.Cursor(api.search, q=SEARCH, rpp=100, since='2018-02-16', unti
 	f.write(" ")
 	f.write(str(res.retweet_count))
 	f.write('\n')
+
 f.close
+
 print("Tweets retrieved ", i)
