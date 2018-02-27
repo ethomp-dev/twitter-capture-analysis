@@ -22,4 +22,4 @@ Enter the query search keyword from the text capture program and the number of r
 
     $ python analyze.py
 
-The output can be found in the `analyses` directory.
+The output can be found in the `analyses` directory. 
